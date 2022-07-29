@@ -26,13 +26,13 @@ function App() {
   //Takes 2 parameters, the particular model and the background overlay to be displayed
   const displayModal = (modal,overlay) =>{
     document.getElementById(modal).style.scale=1;
-    document.getElementById(overlay).style.visibility='visible';
+    document.getElementById(overlay).style.display='block';
   }
   
   //Takes 2 parameters, the particular model and the background overlay to be hidden
   const hideModal = (modal,overlay) =>{
     document.getElementById(modal).style.scale=0;
-    document.getElementById(overlay).style.visibility='hidden';
+    document.getElementById(overlay).style.display='none';
     reset();
   }
 
