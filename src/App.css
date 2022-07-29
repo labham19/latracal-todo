@@ -148,7 +148,8 @@ i{
   transition: all;
   transition-duration: 0.5s;
   padding: 15px;
-  scale: 0;
+  display: none;
+
   border-radius: 20px;
   text-align: center;
   position: fixed;
