@@ -88,7 +88,7 @@ function App() {
     <div className="App">
        <div className='container'>
           <div className='container_header'>
-              <span id='logo_span'>Latracal Todo</span>
+              <span id='logo_span'>Latracal Notes Todo</span>
               <button id='addBtn' className='addBtn btn' onClick={()=>displayModal('addModal','addOverlay')}> <i className="fa fa-plus" aria-hidden="true"></i> </button>
           </div>
           <div className='container_body'>
