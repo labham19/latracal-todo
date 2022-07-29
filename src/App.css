@@ -1,38 +1,273 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+}
+body{
+  background: linear-gradient(to right,rgb(179, 209, 255),rgb(242, 230, 255) );
+}
+.App{
+  height: 100%;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logo_span{
+  font-size: x-large;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  width: 75%;
+  position: relative;
+  height: 80vh;
+  top: 40px;
+  left: 50%;
+  translate: -50%; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container_header{
+  color: white;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: linear-gradient(to right,rgb(0, 0, 204),rgb(153, 0, 255) );
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.btn{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: rgb(0, 153, 255);
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0ch;
+  transition: all;
+  transition-duration: 0.5s;
+  border: 2px solid black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:disabled{
+  opacity: 0.2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#saveBtn{
+  border: 2px solid black;
+}
+#editBtn{
+  background: rgb(255, 255, 0);
+  color: black;
+  border: 2px solid black;
+}
+#deleteBtn{
+  background: rgb(255, 0, 0);
+  color: white;
+  margin-top:20px;
+  margin-bottom:20px;
+  border: 2px solid black;
+}
+#editBtn:hover{
+  background: rgb(200, 200, 0);
+}
+#deleteBtn:hover{
+  background: rgb(200, 0, 0);
+}
+#addBtn:hover,#saveBtn:hover{
+  background: rgb(0, 20, 255);
+}
+
+.container_body{
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  justify-items: center;
+}
+
+.todo_item{
+  border: 2px solid rgb(153, 0, 255);
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(153, 0, 255,0.2);
+}
+
+.todo_item_title{
+  font-weight: 600;
+  text-decoration: underline;
+  color: rgb(76, 0, 128);
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.todo_item_desc{
+  color: rgb(41, 41, 91);
+  font-weight: 400;
+}
+
+.todo_item_date{
+  color: rgb(41, 41, 61);
+}
+
+.todo_item_footer{
+  margin-top:10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+i{
+  cursor: pointer;
+  transition: all;
+  transition-duration: 0.5s;
+  text-shadow: black 1px 1px;
+  
+}
+
+.fa-pencil{
+  color: rgb(200, 150, 0);
+}
+
+.fa-pencil:hover{
+  color: rgb(220, 220, 0);
+}
+
+.fa-trash{
+  color: rgb(150,0,0);
+}
+
+.fa-trash:hover{
+  color: rgb(255,0,0);
+}
+
+.modal{
+  z-index: 20;
+  transition: all;
+  transition-duration: 0.5s;
+  padding: 15px;
+  scale: 0;
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255,255,255);
+  width: 50%;
+  border: 2px solid purple;
+}
+
+#deleteModal{
+  width: 30%;
+}
+
+.modal-header{
+  display: flex;
+  justify-content: end;
+  font-size: x-large;
+}
+
+.closeModal{
+  transition: all;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  font-size: xx-large;
+  margin-right: 30px;
+}
+.closeModal:hover{
+  color: red;
+}
+
+.overlay{
+  z-index: 10;
+  position: fixed;
+  visibility: hidden;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  right: 0%;
+  background: rgb(0,0,0,0.3);
+}
+
+.form-item{
+  margin-top:10px;
+  text-align: left;
+}
+.form-label{
+  margin-top:10px;
+  font-weight: 600;
+}
+.form-input{
+  width: 100%;
+  margin-top:10px;
+  padding: 10px;
+  font-size: medium;
+  border-radius: 7px;
+  border: 2px solid aliceblue;
+}
+
+@media screen and (max-width:400px) {
+  #logo_span{
+    font-size: medium;
   }
-  to {
-    transform: rotate(360deg);
+  .container {
+    width: 95%;
+  }
+  .container_body{
+    margin-top: 10px;
+    padding: 2px;
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+
+  .modal{
+    width: 90%;
+    padding: 10px;
+  }
+  
+  #deleteModal{
+    width: 90%;
+  }
+
+  .form-item{
+    margin-top:5px;
+  }
+
+  .form-label{
+    margin-top:5px;
+  }
+
+  .form-input{
+    width: 100%;
+    margin-top:5px;
+  }
+  
+  .closeModal{
+    margin-right: 10px;
+  }
+}
+
+
+@media screen and (min-width:401px) and (max-width:770px) {
+  .container {
+    width: 95%;
+  }
+  .container_body{
+    margin-top: 10px;
+    padding: 2px;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .modal{
+    width: 90%;
+  }
+
+  #deleteModal{
+    width: 90%;
   }
 }
