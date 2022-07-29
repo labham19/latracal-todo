@@ -209,7 +209,7 @@ i{
   border: 2px solid aliceblue;
 }
 
-@media screen and (max-device-width:400px) {
+@media only screen and (max-device-width:400px) {
   #logo_span{
     font-size: medium;
   }
@@ -251,7 +251,7 @@ i{
 }
 
 
-@media screen and (min-device-width:401px) and (max-device-width:770px) {
+@media only screen and (min-device-width:401px) and (max-device-width:770px) {
   .container {
     width: 95%;
   }
